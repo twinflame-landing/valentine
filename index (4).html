@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Valentins-Portal: Romantische Herzöffnung – Zoom Workshop</title>
+
+  <!-- Social Preview -->
+  <meta property="og:title" content="Valentins-Portal: Romantische Herzöffnung">
+  <meta property="og:description" content="60 Minuten Zoom Workshop, inkl. Aufzeichnung + personalisiertem PDF. Live gechannelter Valentins-Segen pro TeilnehmerIn.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/valentins-portal-hero.jpg">
+
+  <style>
+    :root{
+      --bg:#0b1222;
+      --bg2:#120a14;
+      --card:#0e162a;
+      --border:#233045;
+      --muted:#94a3b8;
+      --text:#e5e7eb;
+      --accent:#ff5ac8;   /* pink neon vibe */
+      --button:#22c55e;
+    }
+    html,body{
+      margin:0;padding:0;
+      background:
+        radial-gradient(1200px 600px at 50% 0%, rgba(255,90,200,.10), transparent 60%),
+        linear-gradient(180deg,var(--bg2),var(--bg));
+      color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+      line-height:1.5;
+    }
+    .wrap{max-width:980px;margin:0 auto;padding:24px}
+    .hero{padding:12px 16px;text-align:center}
+    h1{font-size:clamp(28px,4vw,40px);margin:8px 0 4px}
+    .sub{color:var(--muted);margin:6px 0 16px}
+
+    .tabs{display:flex;gap:8px;justify-content:center;margin:12px 0 18px;flex-wrap:wrap}
+    .tab{
+      border:1px solid #334155;color:var(--text);
+      padding:8px 12px;border-radius:999px;cursor:pointer;
+      background:#0b1324;
+    }
+    .tab.active{
+      background:rgba(255,90,200,.18);
+      border-color:rgba(255,90,200,.55);
+      font-weight:700;
+      box-shadow:0 0 0 2px rgba(255,90,200,.10) inset;
+    }
+
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:960px){.grid{grid-template-columns:1.2fr .8fr}}
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.02), transparent 40%), var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,.28);
+    }
+    h2{font-size:20px;margin:0 0 8px}
+    ul{padding-left:18px;margin:10px 0}
+    .pill{
+      display:inline-block;
+      background:#15223a;
+      border:1px solid #2a3b5e;
+      border-radius:999px;
+      padding:6px 10px;
+      color:var(--muted);
+      font-size:14px;
+      white-space:nowrap;
+    }
+    .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .price{
+      font-weight:800;
+      background:rgba(255,90,200,.10);
+      border:1px solid rgba(255,90,200,.35);
+      border-radius:10px;
+      padding:6px 10px;
+    }
+    .cta{
+      display:inline-block;
+      margin-top:10px;
+      background:var(--button);
+      color:#052e1a;
+      font-weight:800;
+      text-decoration:none;
+      padding:12px 16px;
+      border-radius:12px;
+    }
+    .cta:hover{filter:brightness(1.08)}
+    .hr{height:1px;background:#22324f;margin:16px 0;border-radius:1px}
+    .hidden{display:none}
+    .badge{
+      display:inline-block;
+      background:rgba(255,90,200,.08);
+      border:1px solid rgba(255,90,200,.25);
+      border-radius:10px;
+      padding:5px 10px;
+      margin:2px 6px 0 0;
+      font-size:12px;
+      color:#ffd1ef;
+    }
+    .note{font-size:13px;color:var(--muted)}
+    .big{font-size:18px}
+
+    .heroimg{
+      overflow:hidden;border-radius:16px;border:1px solid var(--border);
+      box-shadow:0 10px 30px rgba(0,0,0,.28);
+      margin:8px auto 10px;
+    }
+    .heroimg img{width:100%;max-height:360px;object-fit:cover;display:block}
+
+    .sideimg{overflow:hidden;border-radius:16px;border:1px solid var(--border)}
+    .sideimg img{width:100%;height:auto;display:block}
+    .cap{font-size:12px;color:var(--muted);margin-top:6px;text-align:center}
+
+    .glowline{
+      height:1px;
+      background:linear-gradient(90deg, transparent, rgba(255,90,200,.55), transparent);
+      margin:14px 0 0;
+      border-radius:1px;
+    }
+
+    /* Footer legal (sehr klein) */
+    footer.legal{
+      max-width:980px;
+      margin:18px auto 40px;
+      padding:0 24px;
+      color:rgba(229,231,235,.70);
+      font-size:11px;
+      line-height:1.45;
+    }
+    footer.legal a{color:rgba(229,231,235,.85)}
+    footer.legal .muted{color:rgba(229,231,235,.58)}
+    footer.legal hr{border:0;height:1px;background:#22324f;margin:14px 0}
+    footer.legal ul{margin:8px 0 0 18px;padding:0}
+  </style>
+
+  <script>
+    const STR = {
+      de: {
+        badge1: "WORKSHOP · Zoom",
+        badge2: "60 Minuten · inkl. Aufzeichnung",
+        price: "$49",
+        title: "Valentins-Portal: Romantische Herzöffnung",
+        sub: "Ein liebevoller Raum für Nervensystem-Harmonie, Herzöffnung und einen echten nächsten Schritt für deine romantische Dualseelen-Kommunikation. Inklusive Aufzeichnung sowie personalisiertem PDF mit gechannelter Botschaft nach dem Workshop.",
+        date1: "Sonntag, 25. Januar 2026",
+        time1: "20:00 Uhr",
+        book: "Jetzt Platz sichern (PayPal)",
+        imgCap: "Romantik in Harmonie, Würde im Herzen",
+        youGetTitle: "Was du bekommst",
+        youGet: [
+          "Nervensystem regulieren mit Romantik",
+          "Meditation: Herzöffnung, um Liebe zu empfangen",
+          "Herzgeführte Selbstreflexion: romantische Wahrheit, Würde, innere Dualseelen-Botschaft",
+          "Gechannelter Valentins-Segen pro TeilnehmerIn",
+          "Romantisches Commitment: dein nächster Schritt für diese Valentinszeit",
+          "Aufzeichnung + personalisiertes PDF nach dem Workshop"
+        ],
+        zoomNote: "Zoom · Link nach Buchung",
+        bookTitle: "Buchen",
+        bookNote: "Klicke auf den Button, buche sicher über PayPal und erhalte anschließend alle Infos per E-Mail."
+      },
+      en: {
+        badge1: "WORKSHOP · Zoom",
+        badge2: "60 minutes · replay included",
+        price: "$49",
+        title: "Valentine’s Portal: Romantic Heart Opening",
+        sub: "A calm, heart-led space for nervous system harmony, receiving love, and one real next step for deeper Twin Flame communication. Replay included, plus a personalized PDF with a channeled message after the workshop.",
+        date1: "Sunday, Jan 25, 2026",
+        time1: "8:00 pm (CET)",
+        book: "Save your seat (PayPal)",
+        imgCap: "Romance in harmony, dignity in the heart",
+        youGetTitle: "What you’ll get",
+        youGet: [
+          "Romance as nervous system harmony",
+          "Guided meditation: heart opening to receive love",
+          "Heart-led reflection: romantic truth, dignity, inner Twin Flame message",
+          "Personal channeled Valentine’s blessing (each participant)",
+          "A romantic commitment you will actually live",
+          "Replay + personalized PDF after the workshop"
+        ],
+        zoomNote: "Zoom · link after booking",
+        bookTitle: "Book",
+        bookNote: "Click the button, book securely via PayPal, and you’ll receive all details by email."
+      }
+    };
+
+    function show(tab){
+      document.querySelectorAll('.lang').forEach(el=>el.classList.add('hidden'));
+      document.getElementById(tab).classList.remove('hidden');
+      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+      document.querySelector('[data-tab="'+tab+'"]').classList.add('active');
+
+      const s = STR[tab];
+      document.getElementById('b1').innerText = s.badge1;
+      document.getElementById('b2').innerText = s.badge2;
+      document.getElementById('b3').innerText = s.price;
+      document.getElementById('title').innerText = s.title;
+      document.getElementById('sub').innerText = s.sub;
+
+      document.querySelectorAll('.date1').forEach(n=>n.innerText = s.date1);
+      document.querySelectorAll('.time1').forEach(n=>n.innerText = s.time1);
+      document.querySelectorAll('.imgCap').forEach(n=>n.innerText = s.imgCap);
+
+      document.querySelectorAll('.youGetTitle').forEach(n=>n.innerText = s.youGetTitle);
+      document.querySelectorAll('.youGetList').forEach(ul=>{
+        ul.innerHTML = "";
+        s.youGet.forEach(item=>{
+          const li = document.createElement('li');
+          li.innerText = item;
+          ul.appendChild(li);
+        });
+      });
+
+      document.querySelectorAll('.zoomNote').forEach(n=>n.innerText = s.zoomNote);
+      document.querySelectorAll('.bookTitle').forEach(n=>n.innerText = s.bookTitle);
+      document.querySelectorAll('.bookNote').forEach(n=>n.innerText = s.bookNote);
+
+      document.querySelectorAll('.cta').forEach(btn=>{
+        btn.innerText = s.book;
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', ()=>show('de'));
+  </script>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div class="heroimg">
+        <!-- Hero-Bild: /images/valentins-portal-hero.jpg -->
+        <img src="images/valentins-portal-hero.jpg" alt="Valentins-Portal hero" onerror="this.closest('.heroimg').style.display='none'">
+      </div>
+
+      <div class="row" style="justify-content:center;gap:12px;">
+        <span id="b1" class="badge"></span>
+        <span id="b2" class="badge"></span>
+        <span id="b3" class="badge"></span>
+      </div>
+
+      <h1 id="title"></h1>
+      <p id="sub" class="sub"></p>
+      <div class="glowline"></div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="de" onclick="show('de')">Deutsch</button>
+        <button class="tab" data-tab="en" onclick="show('en')">English</button>
+      </div>
+    </div>
+
+    <!-- Deutsch -->
+    <div id="de" class="lang">
+      <div class="grid">
+        <div class="card">
+          <h2 class="youGetTitle"></h2>
+          <ul class="big youGetList"></ul>
+
+          <div class="hr"></div>
+          <div class="row">
+            <span class="pill date1"></span>
+            <span class="pill time1"></span>
+            <span class="pill zoomNote"></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="sideimg">
+            <!-- Dein Foto: /images/fabian.jpg -->
+            <img src="images/fabian.jpg" alt="Fabian – Workshop Host" onerror="this.closest('.sideimg').style.display='none'">
+          </div>
+          <p class="cap imgCap"></p>
+
+          <div class="hr"></div>
+          <h2 class="bookTitle"></h2>
+          <p class="note bookNote"></p>
+
+          <!-- FIXED PAYPAL LINK (für beide Sprachen) -->
+          <a class="cta"
+             href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=CN5BFU3AYKR6L"
+             target="_blank" rel="noopener">Jetzt Platz sichern (PayPal)</a>
+
+          <div class="hr"></div>
+          <div class="row">
+            <span class="price">$49</span>
+            <span class="note">Inklusive Aufzeichnung + personalisiertem PDF nach dem Workshop.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- English -->
+    <div id="en" class="lang hidden">
+      <div class="grid">
+        <div class="card">
+          <h2 class="youGetTitle"></h2>
+          <ul class="big youGetList"></ul>
+
+          <div class="hr"></div>
+          <div class="row">
+            <span class="pill date1"></span>
+            <span class="pill time1"></span>
+            <span class="pill zoomNote"></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="sideimg">
+            <img src="images/fabian.jpg" alt="Fabian – Workshop Host" onerror="this.closest('.sideimg').style.display='none'">
+          </div>
+          <p class="cap imgCap"></p>
+
+          <div class="hr"></div>
+          <h2 class="bookTitle"></h2>
+          <p class="note bookNote"></p>
+
+          <!-- FIXED PAYPAL LINK (für beide Sprachen) -->
+          <a class="cta"
+             href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=CN5BFU3AYKR6L"
+             target="_blank" rel="noopener">Save your seat (PayPal)</a>
+
+          <div class="hr"></div>
+          <div class="row">
+            <span class="price">$49</span>
+            <span class="note">Replay + personalized PDF included after the workshop.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="legal">
+    <hr>
+    <div class="muted">
+      Von Twin Flames Universe zertifizierter Ascension Coach.<br>
+      Dualseelenmeisterschaft – alle Rechte vorbehalten. Alle Verkäufe sind endgültig.
+      <br><br>
+      Bitte beachte: Wenn du mehr als zehn Minuten zu spät kommst, findet deine Beratung nicht statt, sofern das nicht mindestens 24 Stunden vorher vereinbart wurde. Die Zahlung muss vollständig eingegangen sein, bevor der Termin stattfindet, und der Termin muss innerhalb von 90 Tagen nach dem Kauf genutzt werden.
+      <br><br>
+      Mit der Buchung und Nutzung meiner spirituellen Coaching-Leistungen bei Dualseelenmeisterschaft erkennst du an, dass ich kein approbierter Psychologe und kein Gesundheitsdienstleister bin und meine Leistungen die Betreuung durch Psycholog*innen oder andere Gesundheitsfachkräfte nicht ersetzen. Spirituelles Coaching ist keinesfalls als psychologische Beratung, Therapie oder medizinischer Rat zu verstehen oder zu verwenden. Durch deine Teilnahme verzichtest du auf Haftungsansprüche gegenüber Dualseelenmeisterschaft.
+      <br><br>
+      Wenn du dich in einer akuten seelischen Krise befindest oder Suizidgedanken hast, hole dir bitte sofort Hilfe:
+      <ul>
+        <li>Deutschland: TelefonSeelsorge <a href="tel:08001110111">0800 111 0 111</a>, <a href="tel:08001110222">0800 111 0 222</a> oder <a href="tel:116123">116 123</a> (24/7, kostenlos).</li>
+        <li>USA: 988 Suicide &amp; Crisis Lifeline, dial <a href="tel:988">988</a> (24/7, free &amp; confidential).</li>
+      </ul>
+      Es ist immer jemand für dich da.
+    </div>
+  </footer>
+</body>
+</html>
