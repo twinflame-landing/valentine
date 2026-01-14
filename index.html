@@ -20,13 +20,14 @@
       --border:#233045;
       --muted:#94a3b8;
       --text:#e5e7eb;
-      --accent:#ff5ac8;
+      --accent:#ff5ac8;   /* pink neon vibe */
       --button:#22c55e;
     }
     html,body{
       margin:0;padding:0;
-      background: radial-gradient(1200px 600px at 50% 0%, rgba(255,90,200,.10), transparent 60%),
-                  linear-gradient(180deg,var(--bg2),var(--bg));
+      background:
+        radial-gradient(1200px 600px at 50% 0%, rgba(255,90,200,.10), transparent 60%),
+        linear-gradient(180deg,var(--bg2),var(--bg));
       color:var(--text);
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
       line-height:1.5;
@@ -35,6 +36,7 @@
     .hero{padding:12px 16px;text-align:center}
     h1{font-size:clamp(28px,4vw,40px);margin:8px 0 4px}
     .sub{color:var(--muted);margin:6px 0 16px}
+
     .tabs{display:flex;gap:8px;justify-content:center;margin:12px 0 18px;flex-wrap:wrap}
     .tab{
       border:1px solid #334155;color:var(--text);
@@ -47,6 +49,7 @@
       font-weight:700;
       box-shadow:0 0 0 2px rgba(255,90,200,.10) inset;
     }
+
     .grid{display:grid;grid-template-columns:1fr;gap:16px}
     @media(min-width:960px){.grid{grid-template-columns:1.2fr .8fr}}
 
@@ -102,15 +105,18 @@
     }
     .note{font-size:13px;color:var(--muted)}
     .big{font-size:18px}
+
     .heroimg{
       overflow:hidden;border-radius:16px;border:1px solid var(--border);
       box-shadow:0 10px 30px rgba(0,0,0,.28);
       margin:8px auto 10px;
     }
     .heroimg img{width:100%;max-height:360px;object-fit:cover;display:block}
+
     .sideimg{overflow:hidden;border-radius:16px;border:1px solid var(--border)}
     .sideimg img{width:100%;height:auto;display:block}
     .cap{font-size:12px;color:var(--muted);margin-top:6px;text-align:center}
+
     .glowline{
       height:1px;
       background:linear-gradient(90deg, transparent, rgba(255,90,200,.55), transparent);
@@ -118,7 +124,7 @@
       border-radius:1px;
     }
 
-    /* Footer legal */
+    /* Footer legal (sehr klein) */
     footer.legal{
       max-width:980px;
       margin:18px auto 40px;
@@ -127,7 +133,7 @@
       font-size:11px;
       line-height:1.45;
     }
-    footer.legal a{color:rgba(229,231,235,.80)}
+    footer.legal a{color:rgba(229,231,235,.85)}
     footer.legal .muted{color:rgba(229,231,235,.58)}
     footer.legal hr{border:0;height:1px;background:#22324f;margin:14px 0}
     footer.legal ul{margin:8px 0 0 18px;padding:0}
@@ -165,7 +171,7 @@
         title: "Valentine’s Portal: Romantic Heart Opening",
         sub: "A calm, heart-led space for nervous system harmony, receiving love, and one real next step for deeper Twin Flame communication. Replay included, plus a personalized PDF with a channeled message after the workshop.",
         date1: "Sunday, Jan 25, 2026",
-        time1: "8:00 pm",
+        time1: "8:00 pm (CET)",
         book: "Save your seat (PayPal)",
         imgCap: "Romance in harmony, dignity in the heart",
         youGetTitle: "What you’ll get",
@@ -214,7 +220,7 @@
       document.querySelectorAll('.bookTitle').forEach(n=>n.innerText = s.bookTitle);
       document.querySelectorAll('.bookNote').forEach(n=>n.innerText = s.bookNote);
 
-      document.querySelectorAll('.cta.de, .cta.en').forEach(btn=>{
+      document.querySelectorAll('.cta').forEach(btn=>{
         btn.innerText = s.book;
       });
     }
@@ -227,7 +233,7 @@
   <div class="wrap">
     <div class="hero">
       <div class="heroimg">
-        <!-- Hero-Bild: lege es als /images/valentins-portal-hero.jpg ab -->
+        <!-- Hero-Bild: /images/valentins-portal-hero.jpg -->
         <img src="images/valentins-portal-hero.jpg" alt="Valentins-Portal hero" onerror="this.closest('.heroimg').style.display='none'">
       </div>
 
@@ -264,7 +270,7 @@
 
         <div class="card">
           <div class="sideimg">
-            <!-- Dein Foto: lege es als /images/fabian.jpg ab -->
+            <!-- Dein Foto: /images/fabian.jpg -->
             <img src="images/fabian.jpg" alt="Fabian – Workshop Host" onerror="this.closest('.sideimg').style.display='none'">
           </div>
           <p class="cap imgCap"></p>
@@ -273,9 +279,9 @@
           <h2 class="bookTitle"></h2>
           <p class="note bookNote"></p>
 
-          <!-- PayPal Link: Hosted Button ID so lassen oder eintragen -->
-          <a class="cta de"
-             href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DE_HOSTED_BUTTON_ID_HERE"
+          <!-- FIXED PAYPAL LINK (für beide Sprachen) -->
+          <a class="cta"
+             href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=CN5BFU3AYKR6L"
              target="_blank" rel="noopener">Jetzt Platz sichern (PayPal)</a>
 
           <div class="hr"></div>
@@ -312,8 +318,9 @@
           <h2 class="bookTitle"></h2>
           <p class="note bookNote"></p>
 
-          <a class="cta en"
-             href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EN_HOSTED_BUTTON_ID_HERE"
+          <!-- FIXED PAYPAL LINK (für beide Sprachen) -->
+          <a class="cta"
+             href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=CN5BFU3AYKR6L"
              target="_blank" rel="noopener">Save your seat (PayPal)</a>
 
           <div class="hr"></div>
@@ -340,7 +347,7 @@
       Wenn du dich in einer akuten seelischen Krise befindest oder Suizidgedanken hast, hole dir bitte sofort Hilfe:
       <ul>
         <li>Deutschland: TelefonSeelsorge <a href="tel:08001110111">0800 111 0 111</a>, <a href="tel:08001110222">0800 111 0 222</a> oder <a href="tel:116123">116 123</a> (24/7, kostenlos).</li>
-        <li>USA: 988 Suicide &amp; Crisis Lifeline – wähle <a href="tel:988">988</a> (24/7, kostenlos &amp; vertraulich).</li>
+        <li>USA: 988 Suicide &amp; Crisis Lifeline, dial <a href="tel:988">988</a> (24/7, free &amp; confidential).</li>
       </ul>
       Es ist immer jemand für dich da.
     </div>
